@@ -2,7 +2,15 @@ import { Chip } from "@/app/components/Chip";
 import styles from "@/app/styles/page.module.css";
 import { ProjectOption } from "@/app/components/ProjectOption";
 
-export function ProjectHeader() {
+interface ProjectHeaderProps {
+  searchValue: string;
+  handleSearch: (value: string) => void;
+}
+
+export function ProjectHeader({
+  searchValue,
+  handleSearch,
+}: ProjectHeaderProps) {
   return (
     <header className={styles.header}>
       <div className={styles["project-title-container"]}>
@@ -17,7 +25,13 @@ export function ProjectHeader() {
           <ProjectOption value="1" />
         </div>
         <form action="">
-          <input type="text" placeholder="Buscar" className={styles.search} />
+          <input
+            type="text"
+            placeholder="Buscar"
+            className={styles.search}
+            value={searchValue}
+            onChange={(e) => handleSearch(e.target.value)}
+          />
         </form>
         <button className={styles.button}>Crear proyecto</button>
       </div>

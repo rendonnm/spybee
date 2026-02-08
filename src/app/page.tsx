@@ -1,33 +1,19 @@
+"use client";
 import { ProjectHeader } from "./components/ProjectHeader";
-import rawProjects from "@/app/_data/mock_data.json";
-import { ProjectRow } from "./components/ProjectRow";
-import { Project } from "./types/project";
-import styles from "@/app/styles/table.module.css";
+import { Projects } from "./components/Projects";
+import { useState } from "react";
 
-export default async function Home() {
-  const projects = rawProjects as Project[];
+export default function Home() {
+  const [searchValue, setSearchValue] = useState("");
+
+  function handleSearch(value: string) {
+    setSearchValue(value);
+  }
+
   return (
     <>
-      <ProjectHeader />
-      <section className={styles.container}>
-        <table>
-          <caption className="sr-only">Proyectos de Spybee</caption>
-          <thead>
-            <tr>
-              <th>Proyecto</th>
-              <th>Plan</th>
-              <th>Estado</th>
-              <th>Equipo</th>
-              <th>Items por vencer</th>
-            </tr>
-          </thead>
-          <tbody>
-            {projects.map((project) => {
-              return <ProjectRow key={project._id} project={project} />;
-            })}
-          </tbody>
-        </table>
-      </section>
+      <ProjectHeader handleSearch={handleSearch} searchValue={searchValue} />
+      <Projects searchValue={searchValue} />
     </>
   );
 }
