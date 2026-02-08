@@ -1,0 +1,43 @@
+.chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray);
+  width: fit-content;
+  height: fit-content;
+  padding-block: 4px;
+  padding-inline: 12px;
+  border-radius: 999999px;
+  font-size: 14px;
+  text-wrap: nowrap;
+}
+
+.active {
+  background-color: #DEF1DF;
+  color: green;
+}
+
+.suspended {
+  background-color: rgb(216, 10, 10);
+  color: rgb(255, 255, 255);
+}
+
+.inactive {
+  background-color: #505050;
+  color: rgb(255, 255, 255);
+}
+
+.pending {
+  background-color: #ffd28f;
+  color: #673e00;
+}
+
+.big {
+  background-color: var(--primary-500);
+  color: var(--foreground)
+}
+
+.small {
+  background-color: #C35E00;
+  color: white;
+}
