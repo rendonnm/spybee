@@ -26,10 +26,23 @@
   flex-wrap: wrap;
 }
 
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  color: var(--gray);
+  pointer-events: none;
+}
+
 .search {
   border-radius: 4px;
-  padding: 10px 20px;
-  border: 1px solid var(--gray)
+  padding: 10px 20px 10px 20px;
+  border: 1px solid var(--gray);
 }
 
 .search:focus {
@@ -37,11 +50,16 @@
 }
 
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   border-radius: 4px;
   padding: 10px 20px;
   font-weight: 600;
   background-color: var(--primary-400);
-  color: var(--foreground)
+  color: var(--foreground);
+  cursor: pointer;
 }
 
 .option-group {
@@ -51,9 +69,13 @@
 }
 
 .option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: transparent;
   min-width: 30px;
   height: 30px;
+  color: var(--foreground);
 }
 
 .option:nth-child(2) {

@@ -2,26 +2,20 @@
 
 import { ProjectRow } from "@/app/components/projects/ProjectRow";
 import { Pagination } from "@/app/components/ui/Pagination";
-import { useProjects } from "@/app/hooks/useProjects";
+import { useProjectStore } from "@/app/store/useProjectStore";
+import {
+  selectProjects,
+  selectActivePage,
+  selectTotalPages,
+} from "@/app/store/selectors/projectSelectors";
 import styles from "@/app/styles/table.module.css";
-import type { SortOption } from "@/app/types/project";
+import { useShallow } from "zustand/react/shallow";
 
-interface ProjectTableProps {
-  search: string;
-  sortBy: SortOption;
-  isAscending: boolean;
-}
-
-export function ProjectTable({
-  search,
-  sortBy,
-  isAscending,
-}: ProjectTableProps) {
-  const { projects, currentPage, totalPages, handlePageChange } = useProjects({
-    search,
-    sortBy,
-    isAscending,
-  });
+export function ProjectTable() {
+  const projects = useProjectStore(useShallow(selectProjects));
+  const currentPage = useProjectStore(selectActivePage);
+  const totalPages = useProjectStore(selectTotalPages);
+  const setPage = useProjectStore((s) => s.setPage);
 
   return (
     <>
@@ -47,7 +41,7 @@ export function ProjectTable({
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
-        onPageChange={handlePageChange}
+        onPageChange={setPage}
       />
     </>
   );
