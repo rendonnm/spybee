@@ -72,6 +72,8 @@ export interface ProjectPlanData {
 
 export type Plan = "big" | "small";
 
+export type SortOption = "alphabetical" | "incidents" | "rfis" | "tasks";
+
 export type ProjectStatus =
   | "suspended"
   | "active"

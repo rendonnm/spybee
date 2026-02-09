@@ -81,3 +81,8 @@ th {
   border: none;
   padding: 0;
 }
+
+select {
+  background-color: transparent;
+  padding-inline: 10px;
+}

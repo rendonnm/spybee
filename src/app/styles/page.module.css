@@ -52,10 +52,31 @@
 
 .option {
   background-color: transparent;
-  width: 30px;
+  min-width: 30px;
   height: 30px;
 }
 
 .option:nth-child(2) {
   border-inline: 1px solid var(--gray);
+}
+
+.sort-direction-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  color: var(--foreground);
+  transition: all 0.2s ease;
+}
+
+.sort-direction-button:hover {
+  color: var(--primary-400);
+  transform: scale(1.1);
+}
+
+.sort-direction-button:active {
+  transform: scale(0.95);
 }

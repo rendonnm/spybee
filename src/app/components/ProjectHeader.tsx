@@ -1,15 +1,25 @@
 import { Chip } from "@/app/components/Chip";
 import styles from "@/app/styles/page.module.css";
 import { ProjectOption } from "@/app/components/ProjectOption";
+import { SortDirectionIcon } from "@/app/components/SortDirectionIcon";
+import type { SortOption } from "@/app/types/project";
 
 interface ProjectHeaderProps {
-  searchValue: string;
-  handleSearch: (value: string) => void;
+  search: string;
+  sortBy: SortOption;
+  isAscending: boolean;
+  onSearch: (value: string) => void;
+  onSortChange: (value: SortOption) => void;
+  onToggleSortDirection: () => void;
 }
 
 export function ProjectHeader({
-  searchValue,
-  handleSearch,
+  search,
+  sortBy,
+  isAscending,
+  onSearch,
+  onSortChange,
+  onToggleSortDirection,
 }: ProjectHeaderProps) {
   return (
     <header className={styles.header}>
@@ -18,19 +28,47 @@ export function ProjectHeader({
         <Chip />
       </div>
       <div className={styles.options}>
-        <ProjectOption value="1" />
+        <ProjectOption>
+          <button
+            onClick={onToggleSortDirection}
+            className={styles["sort-direction-button"]}
+            aria-label={
+              isAscending
+                ? "Cambiar a orden descendente"
+                : "Cambiar a orden ascendente"
+            }
+          >
+            <SortDirectionIcon isAscending={isAscending} />
+          </button>
+        </ProjectOption>
         <div className={styles["option-group"]}>
-          <ProjectOption value="1" />
-          <ProjectOption value="1" />
-          <ProjectOption value="1" />
+          <ProjectOption>
+            <select
+              name="sort"
+              id="sort"
+              value={sortBy}
+              onChange={(e) => onSortChange(e.target.value as SortOption)}
+            >
+              <option value="alphabetical">Orden alfabético</option>
+              <option value="incidents">Cantidad de incidencias</option>
+              <option value="rfis">Cantidad de RFI</option>
+              <option value="tasks">Cantidad de tareas</option>
+            </select>
+          </ProjectOption>
+          <ProjectOption>
+            <div>a</div>
+          </ProjectOption>
+          <ProjectOption>
+            <div>a</div>
+          </ProjectOption>
         </div>
         <form action="">
           <input
             type="text"
             placeholder="Buscar"
             className={styles.search}
-            value={searchValue}
-            onChange={(e) => handleSearch(e.target.value)}
+            value={search}
+            onChange={(e) => onSearch(e.target.value)}
           />
         </form>
         <button className={styles.button}>Crear proyecto</button>

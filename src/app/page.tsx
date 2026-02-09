@@ -1,19 +1,30 @@
 "use client";
+
 import { ProjectHeader } from "./components/ProjectHeader";
-import { Projects } from "./components/Projects";
-import { useState } from "react";
+import { ProjectTable } from "./components/ProjectTable";
+import { useProjectFilters } from "./hooks/useProjectFilters";
 
 export default function Home() {
-  const [searchValue, setSearchValue] = useState("");
-
-  function handleSearch(value: string) {
-    setSearchValue(value);
-  }
+  const {
+    search,
+    sortBy,
+    isAscending,
+    handleSearch,
+    handleSortChange,
+    toggleSortDirection,
+  } = useProjectFilters();
 
   return (
     <>
-      <ProjectHeader handleSearch={handleSearch} searchValue={searchValue} />
-      <Projects searchValue={searchValue} />
+      <ProjectHeader
+        search={search}
+        sortBy={sortBy}
+        isAscending={isAscending}
+        onSearch={handleSearch}
+        onSortChange={handleSortChange}
+        onToggleSortDirection={toggleSortDirection}
+      />
+      <ProjectTable search={search} sortBy={sortBy} isAscending={isAscending} />
     </>
   );
 }

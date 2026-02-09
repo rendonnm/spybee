@@ -1,9 +1,9 @@
 import styles from "@/app/styles/page.module.css";
 
 interface OptionProps {
-  value: string;
+  children: React.ReactNode;
 }
 
-export function ProjectOption({ value }: OptionProps) {
-  return <button className={styles.option}>{value}</button>;
+export function ProjectOption({ children }: OptionProps) {
+  return <div className={styles.option}>{children}</div>;
 }
