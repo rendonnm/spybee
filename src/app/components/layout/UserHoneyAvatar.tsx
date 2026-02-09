@@ -1,4 +1,5 @@
 import styles from "@/app/styles/table.module.css";
+import { HexagonIcon } from "@/app/components/icons/HexagonIcon";
 
 interface UserHoneyNameProps {
   value: string;
@@ -7,14 +8,7 @@ interface UserHoneyNameProps {
 export function UserHoneyName({ value }: UserHoneyNameProps) {
   return (
     <div className={styles.honey}>
-      <svg
-        viewBox="0 0 100 100"
-        aria-hidden="true"
-        stroke="white"
-        strokeWidth={4}
-      >
-        <polygon points="50,3 95,25 95,75 50,97 5,75 5,25" />
-      </svg>
+      <HexagonIcon stroke="white" strokeWidth={4} />
       <span>{value}</span>
     </div>
   );
