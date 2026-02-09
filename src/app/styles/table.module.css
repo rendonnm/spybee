@@ -55,6 +55,20 @@
 
 .row {
   background-color: var(--row-background);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.row:hover {
+  background-color: var(--primary-100);
+}
+
+.row-selected {
+  background-color: var(--primary-200);
+}
+
+.row-selected:hover {
+  background-color: var(--primary-200);
 }
 
 .row td {

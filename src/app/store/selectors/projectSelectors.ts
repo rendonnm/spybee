@@ -4,7 +4,8 @@ import type { ProjectState } from "@/app/store/useProjectStore";
 import { filterProjects, sortProjects } from "@/app/utils/project";
 
 const ITEMS_PER_PAGE = 10;
-const allProjects = rawProjects as Project[];
+
+export const allProjects = rawProjects as Project[];
 
 function getSortedFiltered(state: ProjectState) {
   const filtered = filterProjects(allProjects, state.search);

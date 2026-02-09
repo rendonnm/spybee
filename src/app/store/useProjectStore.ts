@@ -8,6 +8,7 @@ export interface ProjectState {
   sortBy: SortOption;
   isAscending: boolean;
   currentPage: number;
+  selectedProjectId: string | null;
 }
 
 interface ProjectActions {
@@ -16,6 +17,7 @@ interface ProjectActions {
   toggleSortDirection: () => void;
   setPage: (page: number) => void;
   resetPage: () => void;
+  selectProject: (id: string | null) => void;
 }
 
 type ProjectStore = ProjectState & ProjectActions;
@@ -25,6 +27,7 @@ export const useProjectStore = create<ProjectStore>((set) => ({
   sortBy: DEFAULT_SORT,
   isAscending: true,
   currentPage: 1,
+  selectedProjectId: null,
 
   setSearch: (value: string) => set({ search: value, currentPage: 1 }),
 
@@ -41,4 +44,6 @@ export const useProjectStore = create<ProjectStore>((set) => ({
   setPage: (page: number) => set({ currentPage: page }),
 
   resetPage: () => set({ currentPage: 1 }),
+
+  selectProject: (id: string | null) => set({ selectedProjectId: id }),
 }));
