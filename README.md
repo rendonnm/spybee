@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SpyBee - Project Management Dashboard
 
-## Getting Started
+Aplicación de gestión de proyectos construida con Next.js, React, Zustand y Mapbox GL como respuesta a prueba técnica.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black)
+![React](https://img.shields.io/badge/React-19.2.3-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![Zustand](https://img.shields.io/badge/Zustand-5.0.11-purple)
+![Mapbox](https://img.shields.io/badge/Mapbox_GL-3.18.1-green)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📋 Descripción del Proyecto
+
+Sistema de gestión y visualización de proyectos que permite:
+
+- Listar proyectos con información detallada
+- Buscar y filtrar proyectos por múltiples criterios
+- Visualizar ubicaciones de proyectos en mapa interactivo
+- Ver estadísticas generales y próximos vencimientos
+- Navegar entre proyectos con sincronización mapa-tabla
+
+## 🏗️ Arquitectura y Stack Tecnológico
+
+### Stack Principal (Requerido)
+
+- **React 19.2.3** - Librería UI con Server Components
+- **Next.js 16.1.6** - Framework con App Router y Turbopack
+- **Zustand 5.0.11** - Manejo de estado global
+- **Mapbox GL 3.18.1** - Visualización de mapas interactivos
+- **CSS Modules** - Estilos encapsulados por componente
+- **TypeScript 5.0** - Tipado estático
+
+### Estructura de Carpetas
+
 ```
+src/app/
+├── _data/
+│   └── mock_data.json          # Datos JSON proporcionados
+├── components/
+│   ├── icons/                  # Componentes de iconos SVG
+│   ├── layout/
+│   │   ├── Header.tsx          # Cabecera principal
+│   │   ├── ResumenSidebar.tsx  # Sidebar de estadísticas
+│   │   ├── UserHeaderInfo.tsx
+│   │   └── UserHoneyAvatar.tsx
+│   ├── map/
+│   │   └── ProjectMap.tsx      # Mapa Mapbox con marcadores
+│   ├── projects/
+│   │   ├── ProjectHeader.tsx   # Búsqueda y filtros
+│   │   ├── ProjectTable.tsx    # Tabla de proyectos
+│   │   ├── ProjectRow.tsx      # Fila individual
+│   │   └── ...                 # Componentes de columnas
+│   └── ui/
+│       ├── Chip.tsx
+│       └── Pagination.tsx      # Paginación
+├── store/
+│   ├── useProjectStore.ts      # Store Zustand principal
+│   └── selectors/
+│       ├── projectSelectors.ts # Selectores de proyectos
+│       └── statsSelectors.ts   # Selectores de estadísticas
+├── types/
+│   └── project.d.ts            # Tipos TypeScript
+├── utils/
+│   ├── format.ts               # Utilidades de formato
+│   └── project.ts              # Lógica de negocio
+└── styles/                     # CSS Modules
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
