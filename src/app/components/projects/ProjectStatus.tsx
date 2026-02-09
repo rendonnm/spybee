@@ -1,4 +1,4 @@
-import { PROJECT_STATUS } from "../constants/status";
+import { PROJECT_STATUS } from "@/app/constants/status";
 import styles from "@/app/styles/chip.module.css";
 
 interface ProjectStatus {

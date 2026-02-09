@@ -1,10 +1,10 @@
-import type { Project } from "../types/project";
-import { ProjectPlan } from "@/app/components/ProjectPlan";
-import { ProjectStatus } from "@/app/components/ProjectStatus";
-import { ProjectUsers } from "./ProjectUsers";
+import type { Project } from "@/app/types/project";
+import { ProjectPlan } from "@/app/components/projects/ProjectPlan";
+import { ProjectStatus } from "@/app/components/projects/ProjectStatus";
+import { ProjectUsers } from "@/app/components/projects/ProjectUsers";
 import styles from "@/app/styles/table.module.css";
-import { ProjectItems } from "./ProjectItems";
-import { ProjectTitle } from "./ProjectTitle";
+import { ProjectItems } from "@/app/components/projects/ProjectItems";
+import { ProjectTitle } from "@/app/components/projects/ProjectTitle";
 
 interface ProjectRowProps {
   project: Project;

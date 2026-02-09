@@ -1,7 +1,7 @@
 import styles from "@/app/styles/table.module.css";
-import { dateFormater } from "../utils/format";
-import { ClockIcon } from "./ClockIcon";
-import { ReloadIcon } from "./ReloadIcon";
+import { dateFormater } from "@/app/utils/format";
+import { ClockIcon } from "@/app/components/ui/ClockIcon";
+import { ReloadIcon } from "@/app/components/ui/ReloadIcon";
 
 interface ProjectTitleProps {
   title: string;

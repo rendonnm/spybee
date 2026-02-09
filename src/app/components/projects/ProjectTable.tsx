@@ -1,7 +1,7 @@
 "use client";
 
-import { ProjectRow } from "@/app/components/ProjectRow";
-import { Pagination } from "@/app/components/Pagination";
+import { ProjectRow } from "@/app/components/projects/ProjectRow";
+import { Pagination } from "@/app/components/ui/Pagination";
 import { useProjects } from "@/app/hooks/useProjects";
 import styles from "@/app/styles/table.module.css";
 import type { SortOption } from "@/app/types/project";

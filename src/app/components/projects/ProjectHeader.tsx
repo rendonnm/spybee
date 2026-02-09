@@ -1,7 +1,7 @@
-import { Chip } from "@/app/components/Chip";
+import { Chip } from "@/app/components/ui/Chip";
 import styles from "@/app/styles/page.module.css";
-import { ProjectOption } from "@/app/components/ProjectOption";
-import { SortDirectionIcon } from "@/app/components/SortDirectionIcon";
+import { ProjectOption } from "@/app/components/ui/ProjectOption";
+import { SortDirectionIcon } from "@/app/components/projects/SortDirectionIcon";
 import type { SortOption } from "@/app/types/project";
 
 interface ProjectHeaderProps {

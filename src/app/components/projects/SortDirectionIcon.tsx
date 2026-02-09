@@ -15,9 +15,9 @@ export function SortDirectionIcon({ isAscending }: SortDirectionIconProps) {
           <path
             fill="none"
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="m3 8l4-4l4 4M7 4v16m4-8h4m-4 4h7m-7 4h10"
           />
         </svg>
@@ -31,9 +31,9 @@ export function SortDirectionIcon({ isAscending }: SortDirectionIconProps) {
           <path
             fill="none"
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="m3 16l4 4l4-4m-4 4V4m4 0h10M11 8h7m-7 4h4"
           />
         </svg>

@@ -1,4 +1,4 @@
-import { ProjectItem } from "@/app/components/ProjecItem";
+import { ProjectItem } from "@/app/components/projects/ProjecItem";
 import styles from "@/app/styles/table.module.css";
 
 interface ProjectItemsProps {

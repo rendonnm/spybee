@@ -1,4 +1,4 @@
-import { PLANS } from "../constants/plan";
+import { PLANS } from "@/app/constants/plan";
 import styles from "@/app/styles/chip.module.css";
 
 interface ProjectPlan {

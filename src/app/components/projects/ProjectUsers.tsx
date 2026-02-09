@@ -1,5 +1,5 @@
-import { User } from "../types/project";
-import { UserHoneyName } from "./UserHoneyAvatar";
+import { User } from "@/app/types/project";
+import { UserHoneyName } from "../layout/UserHoneyAvatar";
 import styles from "@/app/styles/table.module.css";
 
 interface ProjectUsersProps {

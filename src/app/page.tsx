@@ -1,7 +1,7 @@
 "use client";
 
-import { ProjectHeader } from "./components/ProjectHeader";
-import { ProjectTable } from "./components/ProjectTable";
+import { ProjectHeader } from "./components/projects/ProjectHeader";
+import { ProjectTable } from "./components/projects/ProjectTable";
 import { useProjectFilters } from "./hooks/useProjectFilters";
 
 export default function Home() {
